@@ -1,6 +1,6 @@
 {
 	"name": "Sound",
-	"version": 1,
+	"version": 2,
 	"coreFiles": [
 		"info.json",
 		"browser-source.html",

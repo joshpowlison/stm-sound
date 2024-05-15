@@ -5,7 +5,7 @@ const moduleFunctions = {
 	"logAllOptions": logAllOptions,
 };
 
-Module.LoadModule(moduleFunctions);
+module.LoadModule(moduleFunctions);
 
 var items = [];
 var sounds = [];
@@ -14,7 +14,7 @@ var folderName = 'assets';
 
 async function loadSettings(name, event)
 {
-	items = Utility.getAllPaths(Module.settings.global.fileStructure.modules.Sound[folderName]);
+	items = Utility.getAllPaths(module.settings.global.fileStructure.modules.Sound[folderName]);
 }
 
 async function soundPlay(name, event)
@@ -46,7 +46,7 @@ async function soundPlay(name, event)
 	// Don't bother with nonexistent sounds
 	if(file == null)
 	{
-		Module.F('Console.LogError', 'No Sound named "' + JSON.stringify(event) + '" found.');
+		module.F('Console.LogError', 'No Sound named "' + JSON.stringify(event) + '" found.');
 		return;
 	}
 

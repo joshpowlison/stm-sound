@@ -1,0 +1,24 @@
+{
+	"commands": [
+		{
+			"name": "Sound.LoadSettings",
+			"accessMask": 255,
+			"function": "loadSettings"
+		},
+		{
+			"name": "Sound.Play",
+			"accessMask": 0,
+			"function": "play"
+		},
+		{
+			"name": "Sound.Stop",
+			"accessMask": 0,
+			"function": "stop"
+		},
+		{
+			"name": "Sound.LogAllOptions",
+			"accessMask": 255,
+			"function": "logAllOptions"
+		}
+	]
+}

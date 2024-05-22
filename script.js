@@ -10,11 +10,11 @@ module.LoadModule(moduleFunctions);
 var items = [];
 var sounds = [];
 
-var folderName = 'assets';
+var soundUserDataPath = '../../userData/Sound/';
 
 async function loadSettings(name, event)
 {
-	items = Utility.getAllPaths(module.settings.global.fileStructure.modules.Sound[folderName]);
+	items = Utility.getAllPaths(module.settings.global.fileStructure.userData.Sound);
 }
 
 async function soundPlay(name, event)
@@ -50,7 +50,7 @@ async function soundPlay(name, event)
 		return;
 	}
 
-	var sound = await Utility.playSound(folderName + '/' + file, data);
+	var sound = await Utility.playSound(soundUserDataPath + file, data);
 	// TODO: make Detune Range a setting
 	//sound.detune.value = Utility.getRandomRange(-detuneRange, detuneRange);
 
@@ -89,7 +89,7 @@ async function soundStop(name, event)
 		else
 			trackName = albums[event.album][event.track];
 
-		var trackPath = folderName + '/' + event.album + '/' + trackName;
+		var trackPath = soundUserDataPath + event.album + '/' + trackName;
 
 		// If this sound isn't in the list, exit out here
 		if(sounds.hasOwnProperty(trackPath) == false)

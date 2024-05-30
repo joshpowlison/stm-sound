@@ -14,11 +14,10 @@ var soundUserDataPath = '../../userData/Sound/';
 
 async function loadSettings(name, event)
 {
-	items = Utility.getAllPaths(module.globalSettings.fileStructure.userData.Sound);
+	items = Utility.getAllPaths(module.globalSettings.fileStructure.userData.Sound, [ 'mp3', 'wav', 'flac', 'aiff' ]);
 }
 
-async function soundPlay(name, event)
-{
+async function soundPlay(name, event) {
 	console.log(name, event, "play sound");
 	
 	var data = {};

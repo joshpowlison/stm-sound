@@ -5,20 +5,20 @@ const moduleFunctions = {
 	"logAllOptions": logAllOptions,
 };
 
-module.LoadModule(moduleFunctions);
+module.addActions(moduleFunctions);
 
 var items = [];
 var sounds = [];
 
 var soundUserDataPath = '../../userData/Sound/';
 
-async function loadSettings(name, event)
+async function loadSettings(event)
 {
 	items = Utility.getAllPaths(module.globalSettings.fileStructure.userData.Sound, [ 'mp3', 'wav', 'flac', 'aiff' ]);
 }
 
-async function soundPlay(name, event) {
-	console.log(name, event, "play sound");
+async function soundPlay(event) {
+	console.log(event, "play sound");
 	
 	var data = {};
 	
@@ -61,7 +61,7 @@ async function soundPlay(name, event) {
 	sounds[file].push(sound);
 }
 
-async function soundStop(name, event)
+async function soundStop(event)
 {
 	var keys;
 
@@ -113,7 +113,7 @@ async function soundStop(name, event)
 	}
 }
 
-async function logAllOptions(name, event)
+async function logAllOptions(event)
 {
 	var regexGet = /\/(.+)\.[^.]+$/;
 	var trackNames = [];
